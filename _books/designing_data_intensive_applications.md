@@ -1,12 +1,10 @@
 ---
 title: "Designing Data-Intensive Applications"
-permalink: /books/designing_data_intensive_applications
+permalink: /books/ddia/
 sidebar:
     title: "Designing Data-Intensive Applications"
-    url: "Something cool"
     nav: ddia_sidebar
 toc: true
-breadcrumbs: true
 ---
 
 >Don’t just hack it together. 

@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Fake Data Nerd</title>
-<meta name="description" content="I pretend to know and do things">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 
 
   <meta name="author" content="Steven Seeger">
@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://localhost:4000/">
 
 
-  <meta property="og:description" content="I pretend to know and do things">
+  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 
 
 
@@ -35,10 +35,6 @@
 
 
 
-
-  
-
-  
 
 
 <link rel="canonical" href="http://localhost:4000/">
@@ -51,7 +47,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Steven Seeger",
+      "name": null,
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +120,11 @@
               <a href="/books/">Books</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
@@ -146,17 +147,23 @@
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="" alt="Steven Seeger" itemprop="image" class="u-photo">
+      </a>
+    </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Steven Seeger</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Steven Seeger</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>Claims to be a statistian and computer scientist (although largely pretending)</p>
+      <div class="author__bio p-note" itemprop="description">
+        <p>I pretend to know and do things</p>
 
       </div>
     
@@ -166,23 +173,23 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
-        </li>
-      
 
       
         
           
-        
+            <li><a href="https://" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
           
         
           
-        
+            <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
           
         
           
+            <li><a href="https://github.com/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
         
+          
+            <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
           
         
       
@@ -237,7 +244,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -245,7 +252,6 @@
     </ul>
   </div>
 </div>
-
   
   </div>
 
@@ -258,7 +264,7 @@
     <h1>Hello Fellow Nerds</h1>
 <p>How did you even land on this page???</p> 
 
-<h3 class="archive__subtitle">Recent posts</h3>
+<h3 class="archive__subtitle">Recent Posts</h3>
 
 
 
@@ -275,6 +281,17 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -284,21 +301,19 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
-    
 
     
       
         
-      
+          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
         
       
         
-      
+          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
         
-      
+          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
         
       
     
@@ -309,7 +324,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Steven Seeger. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Fake Data Nerd. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -319,6 +334,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

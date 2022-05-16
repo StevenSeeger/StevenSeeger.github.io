@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/books/designing_data_intensive_applications</loc>
-<lastmod>2022-05-13T17:27:23-06:00</lastmod>
+<loc>http://localhost:4000/books/ddia/</loc>
+<lastmod>2022-05-16T15:07:31-06:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/books/ddia/chapter_1/</loc>
+<lastmod>2022-05-16T15:07:31-06:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/blog/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/books/</loc>

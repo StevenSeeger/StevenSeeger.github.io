@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Fake Data Nerd">
 <meta property="og:title" content="Designing Data-Intensive Applications">
-<meta property="og:url" content="http://localhost:4000/books/designing_data_intensive_applications">
+<meta property="og:url" content="http://localhost:4000/books/ddia/">
 
 
   <meta property="og:description" content="Don’t just hack it together.    NoSQL… Big Data… Scalability… CAP Theorem… Eventual Consistency… Sharding…    Nice buzzwords, but how does the stuff actually work? As software engineers, we need to build applications that are reliable, scalable and maintainable in the long run. We need to understand the range of available tools and their trade-offs. For that, we have to dig deeper than buzzwords.    This book will help you navigate the diverse and fast-changing landscape of technologies for storing and processing data. We compare a broad variety of tools and approaches, so that you can see the strengths and weaknesses of each, and decide what’s best for your application.">
@@ -34,18 +34,14 @@
 
 
 
-  <meta property="article:published_time" content="2022-05-13T17:27:23-06:00">
+  <meta property="article:published_time" content="2022-05-16T15:07:31-06:00">
 
 
 
 
 
-  
 
-  
-
-
-<link rel="canonical" href="http://localhost:4000/books/designing_data_intensive_applications">
+<link rel="canonical" href="http://localhost:4000/books/ddia/">
 
 
 
@@ -55,7 +51,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Steven Seeger",
+      "name": null,
       "url": "http://localhost:4000/"
     
   }
@@ -128,6 +124,11 @@
               <a href="/books/">Books</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
@@ -142,42 +143,6 @@
     <div class="initial-content">
       
 
-
-  
-    
-
-
-
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    
-    
-    
-      
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <span class="sep">/</span>
-      
-      
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/books" itemprop="item"><span itemprop="name">Books</span></a>
-          <meta itemprop="position" content="2" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        <li class="current">Designing Data-Intensive Applications</li>
-      
-    
-  </ol>
-</nav>
-
-  
 
 
 <div id="main" role="main">
@@ -196,29 +161,24 @@
       
       
     
-      
-      
-      
-      
-    
     
       
 
 <nav class="nav__list">
   <h3 class="nav__title" style="padding-left: 0;">Designing Data-Intensive Applications</h3>
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle menu</label>
+  <label for="ac-toc">Toggle Menu</label>
   <ul class="nav__items">
     
       <li>
         
-          <a href="/"><span class="nav__sub-title">Part 1. Foundation of Data Systems</span></a>
+          <span class="nav__sub-title">Part 1. Foundation of Data Systems</span>
         
 
         
         <ul>
           
-            <li><a href="/">1. Reliable Scalable Maintainable Applications</a></li>
+            <li><a href="/books/ddia/chapter_1/">1. Reliable Scalable Maintainable Applications</a></li>
           
             <li><a href="/">2. Data Models</a></li>
           
@@ -239,17 +199,19 @@
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Designing Data-Intensive Applications">
     <meta itemprop="description" content="  Don’t just hack it together.  NoSQL… Big Data… Scalability… CAP Theorem… Eventual Consistency… Sharding…  Nice buzzwords, but how does the stuff actually work? As software engineers, we need to build applications that are reliable, scalable and maintainable in the long run. We need to understand the range of available tools and their trade-offs. For that, we have to dig deeper than buzzwords.  This book will help you navigate the diverse and fast-changing landscape of technologies for storing and processing data. We compare a broad variety of tools and approaches, so that you can see the strengths and weaknesses of each, and decide what’s best for your application.">
-    <meta itemprop="datePublished" content="2022-05-13T17:27:23-06:00">
+    
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Designing Data-Intensive Applications
-</h1>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/books/ddia/" class="u-url" itemprop="url">Designing Data-Intensive Applications
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -274,7 +236,7 @@
         </header>
       
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content e-content" itemprop="text">
         
           <aside class="sidebar__right ">
             <nav class="toc">
@@ -319,21 +281,16 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-05-13T17:27:23-06:00">May 13, 2022</time></p>
-
-
       </footer>
 
       <section class="page__share">
   
-    <h4 class="page__share-title">Share on</h4>
-  
 
-  <a href="https://twitter.com/intent/tweet?text=Designing+Data-Intensive+Applications%20http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fdesigning_data_intensive_applications" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Designing+Data-Intensive+Applications%20http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fddia%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fdesigning_data_intensive_applications" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fddia%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fdesigning_data_intensive_applications" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fddia%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -346,16 +303,26 @@
   
   
     <div class="page__related">
-      <h4 class="page__related-title">You may also enjoy</h4>
+      <h2 class="page__related-title">You May Also Enjoy</h2>
       <div class="grid__wrapper">
         
       </div>
     </div>
   
 </div>
-
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -366,21 +333,19 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
-    
 
     
       
         
-      
+          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
         
       
         
-      
+          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
         
-      
+          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
         
       
     
@@ -391,7 +356,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Steven Seeger. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Fake Data Nerd. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -401,6 +366,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

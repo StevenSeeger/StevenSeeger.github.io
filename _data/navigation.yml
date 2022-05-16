@@ -9,10 +9,9 @@ main:
 # Designing Data-Intensive Applications Sidebar
 ddia_sidebar:
   - title: "Part 1. Foundation of Data Systems"
-    url: / 
     children:
       - title: "1. Reliable Scalable Maintainable Applications"
-        url: /
+        url: /books/ddia/chapter_1/
       - title: "2. Data Models"
         url: /
       - title: "3. Storage and Retrieval"
@@ -25,4 +24,4 @@ books_sidebar:
 - title: "Computer Science"
   children:
     - title: "Desinging Data-Intensive Applications"
-      url: /books/designing_data_intensive_applications
+      url: /books/ddia

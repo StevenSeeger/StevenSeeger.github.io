@@ -111,9 +111,22 @@ defaults:
       comments: # true
       share: true
       related: true
+  - scope:
+      path: ""
+      type: ddia
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      comments: # true
+      share: true
+      related: true
 
 collections:
   books:
+    output: true
+    permalink: /:collection/:path/
+  ddia:
     output: true
     permalink: /:collection/:path/
 

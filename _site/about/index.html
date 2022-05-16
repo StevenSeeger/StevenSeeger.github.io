@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>About Me - Fake Data Nerd</title>
-<meta name="description" content="I pretend to know and do things">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 
 
   <meta name="author" content="Steven Seeger">
@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://localhost:4000/about/">
 
 
-  <meta property="og:description" content="I pretend to know and do things">
+  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 
 
 
@@ -35,10 +35,6 @@
 
 
 
-
-  
-
-  
 
 
 <link rel="canonical" href="http://localhost:4000/about/">
@@ -51,7 +47,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Steven Seeger",
+      "name": null,
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +120,11 @@
               <a href="/books/">Books</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
@@ -138,32 +139,6 @@
     <div class="initial-content">
       
 
-
-  
-    
-
-
-
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    
-    
-    
-      
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <span class="sep">/</span>
-      
-      
-        <li class="current">About Me</li>
-      
-    
-  </ol>
-</nav>
-
-  
 
 
 <div id="main" role="main">
@@ -193,7 +168,7 @@
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="About Me">
     
     
@@ -202,15 +177,17 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">About Me
-</h1>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/about/" class="u-url" itemprop="url">About Me
+</a>
+          </h1>
           
 
 
         </header>
       
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content e-content" itemprop="text">
         
         <p>This is like a really cool bit about me</p>
 
@@ -223,7 +200,6 @@
 
 
         
-
 
       </footer>
 
@@ -238,9 +214,19 @@
   
   
 </div>
-
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -251,21 +237,19 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
-    
 
     
       
         
-      
+          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
         
       
         
-      
+          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
         
-      
+          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
         
       
     
@@ -276,7 +260,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Steven Seeger. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Fake Data Nerd. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -286,6 +270,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
