@@ -87,6 +87,7 @@ footer:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
 
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -94,18 +95,27 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
-      comments: true
+      comments: # true
       share: true
       related: true
-  # _pages
+  # _books
   - scope:
-      path: "_pages"
-      type: pages
+      path: ""
+      type: books
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+
+collections:
+  books:
+    output: true
+    permalink: /:collection/:path/
 
 category_archive:
   type: liquid
