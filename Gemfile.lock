@@ -113,6 +113,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-feed
+  jekyll-include-cache
   jekyll-seo-tag
   jekyll-sitemap
   minimal-mistakes-jekyll
