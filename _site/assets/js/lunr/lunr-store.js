@@ -10,4 +10,16 @@ var store = [{
         "tags": [],
         "url": "/books/ddia/chapter_1/",
         "teaser": null
-      },]
+      },{
+        "title": "Playing Camel Up with Reinforcement Learning",
+        "excerpt":"This was a project that I started in graduate school. Unfortunately, then, my algorithm never got great at playing, the code was super janky, etc. That code can be found here: really cool link. Now that I have graduated, and don’t have to be up until 2 or 3 AM...","categories": [],
+        "tags": [],
+        "url": "/projects/rl_camelup/",
+        "teaser": null
+      },{
+        "title": "Snake In Jekyll",
+        "excerpt":"Want to see if I can figure out how to get snake to work in Jekyll  ","categories": [],
+        "tags": [],
+        "url": "/projects/snake_in_jekyll/",
+        "teaser": null
+      }]

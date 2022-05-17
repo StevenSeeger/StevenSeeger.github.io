@@ -73,3 +73,11 @@ A system meant to handle 10,000 users may not work for 100,000 users. Being able
 
 ### Describing Load
 
+In order to determine how to scale, load parameters must be defined. The best choice for this will depend on the architecture of the system, but it may include numbers such as:
+* Requests per second to web server
+* Ratio of reads to writes in DB
+* Number of simultaneously active users
+* Hit rate on cache
+ 
+**ProTip** You may want to look at averages, but bottnecks may be due to edge/extreme cases
+{: .notice--info}

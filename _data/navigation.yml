@@ -5,6 +5,8 @@ main:
     url: /about/
   - title: Books
     url: /books/
+  - title: Projects
+    url: /projects/
 
 # Designing Data-Intensive Applications Sidebar
 ddia_sidebar:
