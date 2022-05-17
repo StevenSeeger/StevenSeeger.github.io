@@ -59,7 +59,7 @@ plugins:
 
 author:
   name   : "Steven Seeger"
-  avatar : ""
+  avatar : "_images/fakedatanerd.png"
   bio    : "I pretend to know and do things"
   links:
     - label: "Website"
