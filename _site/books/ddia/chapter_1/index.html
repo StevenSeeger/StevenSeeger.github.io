@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-05-17T12:42:33-06:00">
+  <meta property="article:published_time" content="2022-05-17T16:02:37-06:00">
 
 
 
@@ -172,7 +172,9 @@
       
 
 <nav class="nav__list">
-  <h3 class="nav__title" style="padding-left: 0;">Designing Data-Intensive Applications</h3>
+  
+    <a href="/books/ddia/"><h3 class="nav__title" style="padding-left: 0;">Designing Data-Intensive Applications</h3></a>
+    
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">Toggle Menu</label>
   <ul class="nav__items">
@@ -199,7 +201,6 @@
     
   </ul>
 </nav>
-
     
   
   </div>
@@ -233,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          7 minute read
         
       </span>
     
@@ -248,7 +249,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#thinking-about-data-systems">Thinking About Data Systems</a></li><li><a href="#reliability">Reliability</a><ul><li><a href="#hardware-faults">Hardware Faults</a></li><li><a href="#software-errors">Software Errors</a></li><li><a href="#human-errors">Human Errors</a></li><li><a href="#how-important-is-reliability">How Important is Reliability?</a></li></ul></li><li><a href="#scalability">Scalability</a><ul><li><a href="#describing-load">Describing Load</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#thinking-about-data-systems">Thinking About Data Systems</a></li><li><a href="#reliability">Reliability</a><ul><li><a href="#hardware-faults">Hardware Faults</a></li><li><a href="#software-errors">Software Errors</a></li><li><a href="#human-errors">Human Errors</a></li><li><a href="#how-important-is-reliability">How Important is Reliability?</a></li></ul></li><li><a href="#scalability">Scalability</a><ul><li><a href="#describing-load">Describing Load</a></li><li><a href="#describing-performance">Describing Performance</a></li><li><a href="#approaches-for-coping-with-load">Approaches for Coping with Load</a></li></ul></li><li><a href="#maintainability">Maintainability</a><ul><li><a href="#operability-making-life-easy-for-operations">Operability: Making Life Easy for Operations</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -337,6 +338,41 @@
 </ul>
 
 <p class="notice--info"><strong>ProTip</strong> You may want to look at averages, but bottnecks may be due to edge/extreme cases</p>
+
+<p>Twitter used to have a database the was queried, merged and sorted to show people tweets, but that was not an ideal solution because reading tweets occurs much more than posting a tweet. They switched to a cache for each user’s home timline, requiring more power to post a tweet than read a tweet. If a person has many followers, this could mean millions of writes! Twitter is moving to combine the two approaches for different sets of people to manage people with lots of followers, and people with few followers.</p>
+
+<h3 id="describing-performance">Describing Performance</h3>
+
+<p>Once load on the system is defined, testing an increase of load becomes easier. You can view it in two ways:</p>
+<ul>
+  <li>When load parameters are increased, but system resources remains the same, what occurs?</li>
+  <li>When load paramenteres are increased, how many more resources are needed to keep performance the same?</li>
+</ul>
+
+<p>For batch processing, throughput is normally a main concern. How many records are processed per second. For online systems, the response time is important. There are obviously variations in how long things will take, even if the data is replicated and passed through again. Therefore, viewing the numbers in the sense of a distribution is key. Good metrics to follow would be percentiles as they would tell you what x% of responses are experiencing different times of processing/responses. You are also able to look at outliers (95%+ generally) to see what kind of performance the worst offenders have. Sometimes these outliers are important to address, as these might be key users, but at other times, it may be so costly to try to optimize for such a few amount of individuals that it does not make sense to address the issue. It may be down to an SLO/SLA to determine when to address some of these issues.</p>
+
+<h3 id="approaches-for-coping-with-load">Approaches for Coping with Load</h3>
+
+<blockquote>
+  <p>How do we maintain good performance even when our load parameters increase by some amount?</p>
+</blockquote>
+
+<p>There are many solutions for many difference sizes of scale. There are scaling up (moving to more powerful machines) and scaling out (multiple less powerful machines). Distributing across multiple machines is know as shared-nothing. There are times when a combined approach is better as well, such as several powerful machine might be better and cheaper than a lot of small virtual machines.</p>
+
+<p>Elasticity is also important. It means that a system is able to scale up and down on its own as more and less resources are needed depending on load size at any given time.</p>
+
+<p>Something important to keep in mind is that different problems require different solutions. For example, handling 100,000 1kb requests per second is different than handling 3 2gb requests per minute. This means that it important to create a system that handles the most common cases the best.</p>
+
+<h2 id="maintainability">Maintainability</h2>
+
+<p>The most cost for software doesn’t come from inital development, but rather from maintenance. This could be in the form of stable operation, bug fixes, failures, new platforms, new use cases, tech debt, and new features. Software can designed in such a way that can minimize the pain from ongoing maintenance. There are three design principles that can help</p>
+<ul>
+  <li>Operability: Easy for operations team to keep the system running smoothly</li>
+  <li>Simplicity: Easy to understand for new people (low complexity)</li>
+  <li>Evolvability: Easy to make changes to the system (extensibility, modifiability, plasticity)</li>
+</ul>
+
+<h3 id="operability-making-life-easy-for-operations">Operability: Making Life Easy for Operations</h3>
 
         
       </section>

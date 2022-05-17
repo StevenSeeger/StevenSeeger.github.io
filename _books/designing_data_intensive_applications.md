@@ -3,6 +3,7 @@ title: "Designing Data-Intensive Applications"
 permalink: /books/ddia/
 sidebar:
     title: "Designing Data-Intensive Applications"
+    url: /books/ddia/
     nav: ddia_sidebar
 toc: true
 ---

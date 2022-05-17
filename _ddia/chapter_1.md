@@ -81,3 +81,32 @@ In order to determine how to scale, load parameters must be defined. The best ch
  
 **ProTip** You may want to look at averages, but bottnecks may be due to edge/extreme cases
 {: .notice--info}
+
+Twitter used to have a database the was queried, merged and sorted to show people tweets, but that was not an ideal solution because reading tweets occurs much more than posting a tweet. They switched to a cache for each user's home timline, requiring more power to post a tweet than read a tweet. If a person has many followers, this could mean millions of writes! Twitter is moving to combine the two approaches for different sets of people to manage people with lots of followers, and people with few followers.
+
+### Describing Performance
+
+Once load on the system is defined, testing an increase of load becomes easier. You can view it in two ways:
+* When load parameters are increased, but system resources remains the same, what occurs?
+* When load paramenteres are increased, how many more resources are needed to keep performance the same?
+
+For batch processing, throughput is normally a main concern. How many records are processed per second. For online systems, the response time is important. There are obviously variations in how long things will take, even if the data is replicated and passed through again. Therefore, viewing the numbers in the sense of a distribution is key. Good metrics to follow would be percentiles as they would tell you what x% of responses are experiencing different times of processing/responses. You are also able to look at outliers (95%+ generally) to see what kind of performance the worst offenders have. Sometimes these outliers are important to address, as these might be key users, but at other times, it may be so costly to try to optimize for such a few amount of individuals that it does not make sense to address the issue. It may be down to an SLO/SLA to determine when to address some of these issues.
+
+### Approaches for Coping with Load
+
+> How do we maintain good performance even when our load parameters increase by some amount?
+
+There are many solutions for many difference sizes of scale. There are scaling up (moving to more powerful machines) and scaling out (multiple less powerful machines). Distributing across multiple machines is know as shared-nothing. There are times when a combined approach is better as well, such as several powerful machine might be better and cheaper than a lot of small virtual machines.
+
+Elasticity is also important. It means that a system is able to scale up and down on its own as more and less resources are needed depending on load size at any given time. 
+
+Something important to keep in mind is that different problems require different solutions. For example, handling 100,000 1kb requests per second is different than handling 3 2gb requests per minute. This means that it important to create a system that handles the most common cases the best.
+
+## Maintainability
+
+The most cost for software doesn't come from inital development, but rather from maintenance. This could be in the form of stable operation, bug fixes, failures, new platforms, new use cases, tech debt, and new features. Software can designed in such a way that can minimize the pain from ongoing maintenance. There are three design principles that can help
+* Operability: Easy for operations team to keep the system running smoothly
+* Simplicity: Easy to understand for new people (low complexity)
+* Evolvability: Easy to make changes to the system (extensibility, modifiability, plasticity)
+
+### Operability: Making Life Easy for Operations
