@@ -89,7 +89,7 @@ defaults:
       read_time: true
       comments: # true
       share: true
-      related: true
+      related: false
   # _ddia
   - scope:
       path: ""
@@ -100,7 +100,7 @@ defaults:
       read_time: true
       comments: # true
       share: true
-      related: true
+      related: false
   # _projects
   - scope:
       path: ""
@@ -111,7 +111,7 @@ defaults:
       read_time: true
       comments: # true
       share: true
-      related: true
+      related: false
 
 collections:
   books:
