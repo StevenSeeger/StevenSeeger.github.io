@@ -34,3 +34,7 @@ While writing out the bit about why I chose Fake Data Nerd, it also occured to m
 
 Fun fact: I actually work/worked as a Data Scientist and Data Engineer.
 {: .notice--info}
+
+### Food - Eating, Cooking & Baking
+
+I like food. And sometimes I cook. Sometimes I bake. Sometimes I go out to each and I harshly judge the food. Maybe one day I will start posting my opinions about food here. Not to brag or anything, but I have had over 20+ years experience eating food from many different places. Homecooked meals to fancy restaurants. I don't have the most refined flavor palette, and I don't know that most people would even agree with my tastes. But I started this website to put out my unsolicated thoughts, notes and projects about computer and math nerd stuff. Might as well post about food stuff online and make even more people mad.

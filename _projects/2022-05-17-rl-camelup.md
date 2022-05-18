@@ -7,13 +7,13 @@ Start Date: 17 May 2022
 
 End Date: ???
 
-This was a project that I started in graduate school. Unfortunately, then, my algorithm never got great at playing, the code was super janky, etc. That code can be found here: `really cool link`.
+This was a project that I started in graduate school. Unfortunately, my algorithm never got great at playing (just always trying to end the game), the code was super janky, etc. That code can be found here: `really cool link`.
 
 Now that I have graduated, and don't have to be up until 2 or 3 AM for several weeks debugging code, tweaking parameters, and crying, thought that revamping the whole project would be a really neat idea. Hopefully I won't regret it, but I imagine that I probably will.
 
 ## Creating the Game
 
-In order to make it possible to have an algorithm learn to play the game, the game must exist. In code. Which... I'm not an expert coder by any means. So this process is gonna be long and hard. Filled with lots of crying, cursing and googling. Which for a person my age, seems to be just a normal day. So I will count that as a win!
+In order to make it possible to have an algorithm learn to play the game, the game must exist. In code. Which... I'm not an expert coder by any means. So this process is gonna be long and hard. Filled with lots of crying, cursing and googling. Which for a person my age, seems to be just a normal day. So I will count that as a win! Guess some parts of normal life isn't too much different than from being in graduate school. Which is... disappointing.
 
 ### Board
 

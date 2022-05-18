@@ -15,7 +15,7 @@ ddia_sidebar:
       - title: "1. Reliable Scalable Maintainable Applications"
         url: /books/ddia/chapter_1/
       - title: "2. Data Models"
-        url: /
+        url: /books/ddia/chapter_2/
       - title: "3. Storage and Retrieval"
         url: /
       - title: "4. Encoding and Evolution"
@@ -27,3 +27,7 @@ books_sidebar:
   children:
     - title: "Desinging Data-Intensive Applications"
       url: /books/ddia
+- title: "Self Help"
+  children:
+    - title: "Why Has Nobody Told Me This Before?"
+      url: /books/whntmtb/

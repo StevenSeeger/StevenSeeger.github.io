@@ -1,6 +1,7 @@
 ---
 title: "Designing Data-Intensive Applications"
 permalink: /books/ddia/
+topic: Computer Science
 sidebar:
     title: "Designing Data-Intensive Applications"
     url: /books/ddia/
@@ -22,10 +23,12 @@ Start Date: 01 May 2022
 
 End Date:
 
-Num Pages: ???
+Num Pages: 544
 
 ## Links to the Book And Resources
 
 * https://dataintensive.net/
+* https://dataintensive.net/buy.html
+    * This is not an affliate link. Just a link to links of where to buy the book. From basically anywhere.
 
 ## Other Cool Stuff

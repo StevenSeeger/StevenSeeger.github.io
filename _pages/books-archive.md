@@ -1,9 +1,8 @@
 ---
 title: Books I Have/Am Reading
-layout: collection
+layout: books_layout
 permalink: /books/
-collection: books
-author_profile: false
+author_profile: true
 sidebar:
     title: "Books"
     nav: books_sidebar

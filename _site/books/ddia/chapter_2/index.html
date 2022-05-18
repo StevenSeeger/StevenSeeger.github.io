@@ -1,0 +1,468 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Chapter 2: Data Models and Query Langugages - Fake Data Nerd</title>
+<meta name="description" content="Data models are one of the most important parts of developing software because it can define how we think about the problem that we are solving. Most applications build by laying data models on top of each other, leaving the question: how is the data represented in terms of the next lower layer?">
+
+
+  <meta name="author" content="Steven Seeger">
+  
+  <meta property="article:author" content="Steven Seeger">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Fake Data Nerd">
+<meta property="og:title" content="Chapter 2: Data Models and Query Langugages">
+<meta property="og:url" content="http://localhost:4000/books/ddia/chapter_2/">
+
+
+  <meta property="og:description" content="Data models are one of the most important parts of developing software because it can define how we think about the problem that we are solving. Most applications build by laying data models on top of each other, leaving the question: how is the data represented in terms of the next lower layer?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-05-18T14:56:53-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/books/ddia/chapter_2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Fake Data Nerd Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Fake Data Nerd
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About Me</a>
+            </li><li class="masthead__menu-item">
+              <a href="/books/">Books</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+    <a href="/books/ddia/"><h3 class="nav__title" style="padding-left: 0;">Designing Data-Intensive Applications</h3></a>
+    
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Part 1. Foundation of Data Systems</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/books/ddia/chapter_1/">1. Reliable Scalable Maintainable Applications</a></li>
+          
+            <li><a href="/books/ddia/chapter_2/" class="active">2. Data Models</a></li>
+          
+            <li><a href="/">3. Storage and Retrieval</a></li>
+          
+            <li><a href="/">4. Encoding and Evolution</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Chapter 2: Data Models and Query Langugages">
+    <meta itemprop="description" content="Data models are one of the most important parts of developing software because it can define how we think about the problem that we are solving. Most applications build by laying data models on top of each other, leaving the question: how is the data represented in terms of the next lower layer?">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/books/ddia/chapter_2/" class="u-url" itemprop="url">Chapter 2: Data Models and Query Langugages
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#relation-model-versus-document-model">Relation Model Versus Document Model</a><ul><li><a href="#the-birth-of-nosql">The Birth of NoSQL</a></li><li><a href="#the-object-relational-mismatch">The Object-Relational Mismatch</a></li><li><a href="#many-to-one-and-many-to-many-relationships">Many-to-One and Many-to-Many Relationships</a></li><li><a href="#are-document-databases-repeating-history">Are Document Databases Repeating History?</a><ul><li><a href="#the-network-model">The network model</a></li><li><a href="#the-relational-model">The relational model</a></li><li><a href="#comparison-to-document-databases">Comparison to document databases</a></li></ul></li><li><a href="#relational-versus-document-databases-today">Relational Versus Document Databases Today</a><ul><li><a href="#which-data-model-leads-to-simpler-application-code">Which data model leads to simpler application code?</a></li><li><a href="#schema-flexibility-in-the-document-model">Schema flexibility in the document model</a></li><li><a href="#data-locality-for-queries">Data locality for queries</a></li><li><a href="#convergence-of-document-and-relational-databases">Convergence of document and relational databases</a></li></ul></li></ul></li><li><a href="#query-langagues-for-data">Query Langagues for Data</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Data models are one of the most important parts of developing software because it can define how we think about the problem that we are solving. Most applications build by laying data models on top of each other, leaving the question: how is the data represented in terms of the next lower layer?</p>
+
+<p>The layers are important because it hides the complexity of each layer below it (imagine having to deal with low levels such as representing bytes of data as 1’s and 0’s the entire time), and allows for engineers and developers to work together more effectively. That being said, there are many types of data models, and each has it own pros and cons. It takes a lot of effort to understand one data model, so choosing the right one can be difficult. Understanding data models in a general sense can help in making these decisions.</p>
+
+<h2 id="relation-model-versus-document-model">Relation Model Versus Document Model</h2>
+
+<p>The best known model today is SQL, where data is organized into relations (i.e. tables) and each relation is an unordered collection of tuples (i.e. rows). When first brought up, it was a theoretical proposal, with concerns about implementation. The roots of these relational databases is in business data processing. The use cases were mainly limited to transaction preocessing and batch processing. Other databases at the time required a lot of thought and import from developers, while the relational database’s goal was to abstract that away.</p>
+
+<p>Competing approaches to relational databases include network models, hierarchical models, object databases, and XML databases. Each generated hype, but never truly caught on. As computers became more powerful and connected, relational databases managed to stay relevant, and generalize well beyond their orginal scope of work. Relation databases are still used widely today, for things such as online publishing, discussion, social networks, ecommerce, gamins, etc.</p>
+
+<h3 id="the-birth-of-nosql">The Birth of NoSQL</h3>
+
+<p>NoSQL started out as a twitter hashtag to reference a meetup on open source, distributed, nonrelational databases - not any specific technology. A number of databases now associate with NoSQL, and NoSQL has retrospecively been defined as “Not Only SQL”. The drive to adopt NoSQL included the following points:</p>
+<ul>
+  <li>Greater scalability - large datasets or very high write throughput</li>
+  <li>Preference for free and open source software</li>
+  <li>Specialized query operations not well supported by relational models</li>
+  <li>Frustration with the restriveness of relational schemas</li>
+</ul>
+
+<p>There are many different requirements for different types of systems, and the best choice of technology can change depending on those requirements. That being said, relational databases most likely won’t be going anywhere, and will be used in tandem with nonrelation databases - which is an idea called polyglot persistence.</p>
+
+<p class="notice--info"><strong>Polyglot Persistence:</strong> a term that refers to using multiple data storage technologies for varying data storage needs across an application or within smaller components of an application. Such varying data storage needs could arise in both the cases, i.e. an enterprise with multiple applications or singular components of an application needing to store data differently.</p>
+
+<h3 id="the-object-relational-mismatch">The Object-Relational Mismatch</h3>
+
+<p>Most application development is done in an object-oriented langaguge. This leads to critism of the SQL - if data is stored in relational tables, the transition alyer is required between objects between the code and the database. Object-relational mapping (ORM) tries to reduce the boilerplate code for the transition layer, but it cannot compledly do away with it.</p>
+
+<p>A one-to-many relationship can represent this. For example, on LinkedIn, a person can have worked at multiple places. This introduces the need to map between multiple tables to retrieve all the data needed. A data structure like that could be represented in a document, such as JSON. Document-oriented databases would be able to support a model like this, and some feel like this reduces the impendence mismatch (the mismatch between how the code handles data and the data models handles it).</p>
+
+<h3 id="many-to-one-and-many-to-many-relationships">Many-to-One and Many-to-Many Relationships</h3>
+
+<p>If a user interface has a free-text field, it can make sense to using standardized lists instead:</p>
+<ul>
+  <li>Consistent style and spelling</li>
+  <li>Ease of updating - data is kept in a single place and can be updated once</li>
+  <li>Localization support - easy transalation</li>
+  <li>Better search</li>
+</ul>
+
+<p>When storing an ID or text string, it might be a question of duplication. Human-meaningful information may need to change, while human-meaningless information (such as ID) can remain the same forever - you may need to update the value that the ID refers to though. Removing duplication is the key idea behind normalization in databases.</p>
+
+<p class="notice--info"><strong>Noramlization:</strong> For a database, this means storing values that can be duplicated in just one place</p>
+
+<p>The downside of normalization is that it requires many-to-one relationships that dont work well with the document model (they do work well with the relational model though). If the database does not support joins, you may need to emulate joins in code.</p>
+
+<h3 id="are-document-databases-repeating-history">Are Document Databases Repeating History?</h3>
+
+<p>Document databases, like older databases, work well for one-to-many relationships, but many-to-many were difficult, and joins aren’t supported. This brought one many solutions, with the largest two being relational models and network models. The problems that were faced when database models were being designed then, are still some of the issues that are faced today.</p>
+
+<h4 id="the-network-model">The network model</h4>
+
+<p>The network model was standardized by the Conference on Data Systems Languages (CODSAYL) committee, and implemented by many vendors. This became known as the CODASYL model. This model was a generalization of the hierarchical model. Iin a hierarchical model, each record has exactly one parent, while in the CODSAYL model, a recond could have many. This allows for many-to-one and many-to-many relations be represented. The links in the records were not keys, but more similar to pointers. The only way to access a record was to follow a path along a chain of records, otherwise known as the access path. This lead to issues when querying to naviagating around in n-dimensional data spce.</p>
+
+<p>The network model made code for querying and updating the database complicated and inflexible. If you wanted to access a record, but didn’t have an access path, you had to write a lot of database code to retrieve the recond.</p>
+
+<h4 id="the-relational-model">The relational model</h4>
+
+<p>All data in a relational model is laid out in the open. There are no nested structures, no access paths. All rows in a table could be viewed, and inserting rows was easy. A optimizer handles how a query is executed, which could be imagined as the access path, but this was managed by the optimizer, and the programmer rarely had to worry about them.</p>
+
+<h4 id="comparison-to-document-databases">Comparison to document databases</h4>
+
+<p>Document databases revert back to network models by allowing for nested records. However, when it comes to relationships, it is more akin to that of a relational model using unique identifiers. In this case called a document reference and not a foriegn key.</p>
+
+<h3 id="relational-versus-document-databases-today">Relational Versus Document Databases Today</h3>
+
+<p>Many differences when comparing relational vs document databases. This includes fault tolerance and concurrency. The main arguements to use a document data model are:</p>
+<ul>
+  <li>Schema Flexibility</li>
+  <li>Performance</li>
+  <li>Data Structures</li>
+</ul>
+
+<p>Relational models counter this by having:</p>
+<ul>
+  <li>Support for Joins</li>
+  <li>Many-to-one relationships</li>
+  <li>Many-to-many relationships</li>
+</ul>
+
+<h4 id="which-data-model-leads-to-simpler-application-code">Which data model leads to simpler application code?</h4>
+
+<p>If the application uses data in a document-like structure, probably a better idea to go with a document model. Shredding the data (as in relational databases) can lead to lots of schemas and complicated (and unncessary) application code. But document models do have limiations. You cannot refer directly to nested items (but if the document is not deeply nested, this many not present a large problem). Poor support for joins may be a problem, but there are situations where many-to-many relations are not needed. If joins are needed, then it is possible to reduce that need by keeping denormalized data, but that can prove challenging. Joins can be emulated in application code, but this can often add complexity, and degrade performance.</p>
+
+<h4 id="schema-flexibility-in-the-document-model">Schema flexibility in the document model</h4>
+
+<p>Most document databases do not enforce any schema on the data. No schema means arbitrary keys and values can be added, but when reading, clients have no guarentee about what fields in a document may contain. Document databases are sometimes called schemaless, but that is misleading because there is an implcit schema, just not enforced. It is better to think of it as schema-on-read (schema is interpreted when the data is read).</p>
+
+<p>Schema-on-read is similar to runtime type checking, while for schema-on-write is more similar to compiletime type checking. Both have their own pros and cons, with neither being the right solution. This is most notiable when changing the format of the data. In a document database, new values would be placed in, with a function to handle when old documents are read. When dealing with schema-on-write, a migration is needed. While schema changes have a reputation for being slow and requiring downtime, this is not entirely justified. Running <code class="language-plaintext highlighter-rouge">UPDATE</code> on a large table is likely to be slow because every row needs to be rewritten (although you can leave the new field as empty and fill it in during read time).</p>
+
+<p>Schema-on-read can be more advantageous if the collection doesnt have the same structure because:</p>
+<ul>
+  <li>many difference types of objects, and not feasible to put each object in its own table</li>
+  <li>structure of the data is determined by external systems</li>
+</ul>
+
+<h4 id="data-locality-for-queries">Data locality for queries</h4>
+
+<p>Document is normally stored as a continuous string, encoded into some file type. If an entire/large portions of a document is regularly loaded into memory, storage locality would be a big advantage, but would not be possible if a document was split among many tables. Documents are encouraged to be kept fairly small to reduce the cost of loading it into memory, or when changes occur.</p>
+
+<p>Locality isn’t limited to document models, as some vendors allow for nested rows in a parent table. This is the idea of a multi-table index cluster table or column family.</p>
+
+<h4 id="convergence-of-document-and-relational-databases">Convergence of document and relational databases</h4>
+
+<p>Relational databases have started to support holding and editing documents. This is a good thing because as relational and document models become more similar, it will be easier to find solutions for a wider variety of needs.</p>
+
+<h2 id="query-langagues-for-data">Query Langagues for Data</h2>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Chapter+2%3A+Data+Models+and+Query+Langugages%20http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fddia%2Fchapter_2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fddia%2Fchapter_2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbooks%2Fddia%2Fchapter_2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/books/ddia/chapter_1/" class="pagination--pager" title="Chapter 1: Reliable, Scalable, and Maintainable Applications
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Fake Data Nerd. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

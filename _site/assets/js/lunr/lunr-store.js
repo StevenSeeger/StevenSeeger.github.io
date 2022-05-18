@@ -5,14 +5,26 @@ var store = [{
         "url": "/books/ddia/",
         "teaser": null
       },{
+        "title": "Why Has Nobody Told Me This Before?",
+        "excerpt":"Start Date: 16 May 2022   End Date: 18 May 2022  ","categories": [],
+        "tags": [],
+        "url": "/books/whntmtb/",
+        "teaser": null
+      },{
         "title": "Chapter 1: Reliable, Scalable, and Maintainable Applications",
         "excerpt":"Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU power is merely a limiting factor for these applications - bigger problems are usually the amoutn of data, the complexity of the data, and the speed at which it is changing. Some of the standard building blocks to data...","categories": [],
         "tags": [],
         "url": "/books/ddia/chapter_1/",
         "teaser": null
       },{
+        "title": "Chapter 2: Data Models and Query Langugages",
+        "excerpt":"Data models are one of the most important parts of developing software because it can define how we think about the problem that we are solving. Most applications build by laying data models on top of each other, leaving the question: how is the data represented in terms of the...","categories": [],
+        "tags": [],
+        "url": "/books/ddia/chapter_2/",
+        "teaser": null
+      },{
         "title": "Playing Camel Up with Reinforcement Learning",
-        "excerpt":"This was a project that I started in graduate school. Unfortunately, then, my algorithm never got great at playing, the code was super janky, etc. That code can be found here: really cool link. Now that I have graduated, and don’t have to be up until 2 or 3 AM...","categories": [],
+        "excerpt":"Start Date: 17 May 2022 End Date: ??? This was a project that I started in graduate school. Unfortunately, my algorithm never got great at playing (just always trying to end the game), the code was super janky, etc. That code can be found here: really cool link. Now that...","categories": [],
         "tags": [],
         "url": "/projects/rl_camelup/",
         "teaser": null

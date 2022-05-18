@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-05-17T17:18:45-06:00">
+  <meta property="article:published_time" content="2022-05-18T14:56:53-06:00">
 
 
 
@@ -189,7 +189,7 @@
           
             <li><a href="/books/ddia/chapter_1/" class="active">1. Reliable Scalable Maintainable Applications</a></li>
           
-            <li><a href="/">2. Data Models</a></li>
+            <li><a href="/books/ddia/chapter_2/">2. Data Models</a></li>
           
             <li><a href="/">3. Storage and Retrieval</a></li>
           
@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 minute read
+          8 minute read
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#thinking-about-data-systems">Thinking About Data Systems</a></li><li><a href="#reliability">Reliability</a><ul><li><a href="#hardware-faults">Hardware Faults</a></li><li><a href="#software-errors">Software Errors</a></li><li><a href="#human-errors">Human Errors</a></li><li><a href="#how-important-is-reliability">How Important is Reliability?</a></li></ul></li><li><a href="#scalability">Scalability</a><ul><li><a href="#describing-load">Describing Load</a></li><li><a href="#describing-performance">Describing Performance</a></li><li><a href="#approaches-for-coping-with-load">Approaches for Coping with Load</a></li></ul></li><li><a href="#maintainability">Maintainability</a><ul><li><a href="#operability-making-life-easy-for-operations">Operability: Making Life Easy for Operations</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#thinking-about-data-systems">Thinking About Data Systems</a></li><li><a href="#reliability">Reliability</a><ul><li><a href="#hardware-faults">Hardware Faults</a></li><li><a href="#software-errors">Software Errors</a></li><li><a href="#human-errors">Human Errors</a></li><li><a href="#how-important-is-reliability">How Important is Reliability?</a></li></ul></li><li><a href="#scalability">Scalability</a><ul><li><a href="#describing-load">Describing Load</a></li><li><a href="#describing-performance">Describing Performance</a></li><li><a href="#approaches-for-coping-with-load">Approaches for Coping with Load</a></li></ul></li><li><a href="#maintainability">Maintainability</a><ul><li><a href="#operability-making-life-easy-for-operations">Operability: Making Life Easy for Operations</a></li><li><a href="#simplicity-managing-complexity">Simplicity: Managing Complexity</a></li><li><a href="#evolability-making-change-easy">Evolability: Making Change Easy</a></li></ul></li><li><a href="#summary">Summary</a></li></ul>
 
             </nav>
           </aside>
@@ -374,6 +374,59 @@
 
 <h3 id="operability-making-life-easy-for-operations">Operability: Making Life Easy for Operations</h3>
 
+<p>Operations teams keep the system running smoothly. They may also be responsible for:</p>
+<ul>
+  <li>Monitoring system health</li>
+  <li>Restoring system from a bad state</li>
+  <li>Security and software patches</li>
+  <li>Tracking the interconnections between different systems</li>
+  <li>Anticipating future problems and addressing them</li>
+  <li>Establishing good programming practices</li>
+  <li>Handle complex maintenance tasks</li>
+  <li>Make operations predictable by defining processes</li>
+  <li>Documentation</li>
+</ul>
+
+<p>Good data systems can also help:</p>
+<ul>
+  <li>Visibility into runtime behavior and internal systems</li>
+  <li>Support for automation and integration</li>
+  <li>Avoiding dependency on individual machines</li>
+  <li>Documentation w/ easy to understand operational models</li>
+  <li>Good default behavior, with options to allow admin manual control when needed</li>
+  <li>Exhibits predictible behavior</li>
+</ul>
+
+<h3 id="simplicity-managing-complexity">Simplicity: Managing Complexity</h3>
+
+<p>As code projects increase in size and scope, knowing how a system operates gradually becomes more complex and difficult to understand. There are many symptoms of complexity such as:</p>
+<ul>
+  <li>explosion of state space</li>
+  <li>tight coupling of modules</li>
+  <li>tangled dependencies</li>
+  <li>inconsistent naming and terminology</li>
+  <li>hacks to solved performance issues</li>
+  <li>special case programming</li>
+  <li>etc.</li>
+</ul>
+
+<p>When complexity is high, costs and schedules are often overrun, and the risk of introducing bugs is increased. It becomes harder for developers to understand the logic, and miss hidden assumptions. Reducing complexity can help avoid these problems. While making a system simpler, it does not inherently mean reducing functionality. The aim should be to remove accidental complexity, which can be defined as complexity that is introduced when the solution introduces more complexity than is needed to solve for the problem, but only from the implementation of the solution.</p>
+
+<p>A great tool for avoiding complexity is abstraction. It can hide a major portion of the implementation behind clean and easy to understand code. Finding things to abstract is difficult though.</p>
+
+<h3 id="evolability-making-change-easy">Evolability: Making Change Easy</h3>
+
+<p>System requirements will change over time, and being able to keep the system agile can help with those changes. This also relates to simplicity because the simpler a system is, the easier it will be to refactor and modify to match the system requirement changes over time.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>The above topics were the fundamentals of how to think about data intensive applications. The key concepts covered were:</p>
+<ul>
+  <li>Reliabliity</li>
+  <li>Scalability</li>
+  <li>Maintainability</li>
+</ul>
+
         
       </section>
 
@@ -398,6 +451,16 @@
 
 
       
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/books/ddia/chapter_2/" class="pagination--pager" title="Chapter 2: Data Models and Query Langugages
+">Next</a>
+    
+  </nav>
+
     </div>
 
     

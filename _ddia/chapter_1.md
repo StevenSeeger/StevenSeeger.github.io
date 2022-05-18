@@ -110,3 +110,48 @@ The most cost for software doesn't come from inital development, but rather from
 * Evolvability: Easy to make changes to the system (extensibility, modifiability, plasticity)
 
 ### Operability: Making Life Easy for Operations
+
+Operations teams keep the system running smoothly. They may also be responsible for:
+* Monitoring system health
+* Restoring system from a bad state
+* Security and software patches
+* Tracking the interconnections between different systems
+* Anticipating future problems and addressing them
+* Establishing good programming practices
+* Handle complex maintenance tasks
+* Make operations predictable by defining processes
+* Documentation
+
+Good data systems can also help:
+* Visibility into runtime behavior and internal systems
+* Support for automation and integration
+* Avoiding dependency on individual machines
+* Documentation w/ easy to understand operational models
+* Good default behavior, with options to allow admin manual control when needed
+* Exhibits predictible behavior
+
+### Simplicity: Managing Complexity
+
+As code projects increase in size and scope, knowing how a system operates gradually becomes more complex and difficult to understand. There are many symptoms of complexity such as:
+* explosion of state space
+* tight coupling of modules
+* tangled dependencies
+* inconsistent naming and terminology
+* hacks to solved performance issues
+* special case programming
+* etc.
+
+When complexity is high, costs and schedules are often overrun, and the risk of introducing bugs is increased. It becomes harder for developers to understand the logic, and miss hidden assumptions. Reducing complexity can help avoid these problems. While making a system simpler, it does not inherently mean reducing functionality. The aim should be to remove accidental complexity, which can be defined as complexity that is introduced when the solution introduces more complexity than is needed to solve for the problem, but only from the implementation of the solution.
+
+A great tool for avoiding complexity is abstraction. It can hide a major portion of the implementation behind clean and easy to understand code. Finding things to abstract is difficult though.
+
+### Evolability: Making Change Easy
+
+System requirements will change over time, and being able to keep the system agile can help with those changes. This also relates to simplicity because the simpler a system is, the easier it will be to refactor and modify to match the system requirement changes over time. 
+
+## Summary
+
+The above topics were the fundamentals of how to think about data intensive applications. The key concepts covered were:
+* Reliabliity
+* Scalability
+* Maintainability

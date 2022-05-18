@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Steven Seeger"
   avatar : "assets/images/fakedatanerd.jpg"
-  bio    : "I claim to be a statistian and computer scientist. Mostly pretending though"
+  bio    : "I claim to be a statistian and computer scientist. Mostly pretending though."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
