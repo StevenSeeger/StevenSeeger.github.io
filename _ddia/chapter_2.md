@@ -108,3 +108,84 @@ Relational databases have started to support holding and editing documents. This
 
 ## Query Langagues for Data
 
+SQL is a declarative language and not imperative. This means that you specify the pattern of data wanted/transformed, but not how to get the data. In the case of SQL a query optimizer is utilized to decide how best to get the data. This allows for abstraction of code, easier implementation, and often is better suited to parallel execution.
+
+### Declarative Queries on the Web
+
+CSS and XSL are both declarative. This allows for things such as defining a backgroud color to be handled in a simple way of including a statement such as `background-color="blue"` without having to write out a lot of code to handle that event. In JavaScript, using a Document Object Model, this adds several lines of code and complexity (I am not going to write out that bit of code because it requires accessing each element of a document, iterating throught the length, classnames, and children to look for the background color to set).
+
+### MapReduce Querying
+
+> MapReduce is a programming model for processing large amounts of data in bulk across many machine
+
+MapReduce is supported by some NoSQL datastores largely as a mechanism for read-only queries. It is neither a declarative or imperative language, but exists somewhere between the two. It allows for some data queries to be handled by an optimizer, and allows for some direct handling by the developer. MapReduce is fairly low-level, but must only use pure functions (i.e. only use data that is passed in, and is not allowed to query other data), but gains functionality in the fact that it can run anywhere, and rerun on failure.
+
+Something else to note is that MapReduce is able to handle JavaScript code within a query (although some SQL databases now allow for this). This can introduce a usability problem though, as you more carefully have to manage coordinating JavaScript functions (which can often be harder than writing a single query). Something else to consider is that this reduces the opportunities for a query optimizer to enhance the performance of a query, but in MongoDB, support for declarative-like JSON functions have been added. This is leading some NoSQL systems to be somewhat recreating SQL.
+
+**Note** SQL is not constrained to run on a single machine, and MapReduce is not the only solution for distributed query execution.
+{: .notice--info}
+
+## Graph-Like Data Models
+
+Relational models can handle simple cases of many-to-many connections, but when it becomes more complex, it can make more sense to model data as a graph. A graph consists of vertices (nodes such as people in social networks) and edges (connections between nodes, or links between friends in a social network). Typical examples of graph models include:
+* Social graphs
+* The web graph
+* Road or rail networks
+
+Graphs are not restricted to homogeneous data, but con store different types of data objects consistently. There are many ways of handing graph data models.
+
+### Property Graphs
+
+A vertex contains:
+* Unique identifier
+* Set of outgoing edges
+* Set of incoming edges
+* Collection of properties (key-value pairs)
+
+An edge contains:
+* Unique identifier
+* Vertex for the edge start
+* Vertex for the edge end
+* Label to describe the kind of relationship between the vertices
+* Collection of properties (key-value pairs)
+
+A good way to think about this is two relational tables. The verteices have an id, and json file of properties, while the edges have an id, two vertex ids (head and tail), a label and json for the properties of the edge. Import aspects of this model include:
+* Any vertex can have an edge connecting it to another vertex
+* Given any vertex, you can efficiently find incoming and outgoing edges (and traverse the graph)
+* Using differenet labels, you can store several different kinds of info in a single graph, while maintaining a clean data model
+
+### Cypher Query Language
+
+Cypher is a declarative language for property graphs (named after a character in the matrix, and not related to ciphers in cryptography). In Cypher, each vertex is given a symbolic name, while using other parts can use those names to create edges. For example: `(Idaho) -[:WITHIN]-> (USA)`, where the edge is labeled as `WITHIN` and having `Idaho` and `USA` as the tail and head node respectively. This then allows for `MATCH` clauses to find patterns in the graph. As this is a declarative language, the developer does not need to concern themself with how a query should be executed.
+
+### Graph Queries in SQL
+
+Graph data can be stored in SQL, but it adds complexity and difficulty. In SQL you are required to know how far a query needs to traverse (i.e. the number of joins), while in graph SQL the amount of traversal is not needed to be known. This has been somewhat replicated in SQL with `recursive common table expressions`. In comparison, a query in a graph data model may only take 4 lines of code, while in a relational model, it may take over 25 lines of code. This shows that knowing how your data is important when picking a data model.
+
+### Triple-Stores and SPARQL
+
+Triple-store models are largely the same as Graph models, but use different terminologies. All information is store in a three-part statement: (subject, predicate, object). A triple's subject is similar to a vertex, with the object being one of two things:
+* Value in a primative datatype
+* Another vertex in the graph
+
+#### The semantic web
+
+The semantic web is that websites publish human-readable info, so they should publish machine readable info as well. The main idea was that triple-stores were meant to handle this idea, and creat the web of data.
+
+#### The RDF data model
+
+RDF model can be used within XML. It has a few quirks, as it was designed for internet-wide data exchange. The triple is often contained in the URL.
+
+#### The SPARQL query language
+
+SPARQL is the query langauge for triples-store using RDF. The query is more concise in SPARQL over that of Cypher. 
+
+### The Foundation: Datalog
+
+Datalog predates SPARQL and Cypher, and is similar to the triple-store model. Data is stored as `predicate(subject,object)`. When querying data, instead of using a `SELECT` right away, rules are defined about predicates; Rules can reference other rules and are a form of predicates. 
+
+## Summary
+
+Data models is a large subject. At first, data was first represented with a tree structure (i.e. hierarchical model), but ran into issues with many-to-many relationships. The relational model was introduced to handle that. When some applications struggled with relational models, NoSQL nonrelational model swere created with two main directions: `Graph` and `Document`. All three models (document, relational, graph) are used today, and each has its pros and cons for different situations.
+
+The models listed above are not comprehensive though, with many still being built out today. 

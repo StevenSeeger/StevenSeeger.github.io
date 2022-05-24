@@ -5,6 +5,12 @@ var store = [{
         "url": "/books/ddia/",
         "teaser": null
       },{
+        "title": "How Not to Be Wrong",
+        "excerpt":"The book starts off with the age old question: “Will I ever actually use this?” And answers it rather well. Learning mathematics, even if you aren’t going to be doing mathematics professionally, helps people develop critical thinking skills, and allows us to view problems in different ways. So the next...","categories": [],
+        "tags": [],
+        "url": "/books/hntbw/",
+        "teaser": null
+      },{
         "title": "Why Has Nobody Told Me This Before?",
         "excerpt":"Start Date: 16 May 2022   End Date: 18 May 2022  ","categories": [],
         "tags": [],

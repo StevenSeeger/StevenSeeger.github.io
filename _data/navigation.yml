@@ -17,7 +17,7 @@ ddia_sidebar:
       - title: "2. Data Models"
         url: /books/ddia/chapter_2/
       - title: "3. Storage and Retrieval"
-        url: /
+        url: /books/ddia/chapter_3/
       - title: "4. Encoding and Evolution"
         url: /
 
