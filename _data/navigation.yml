@@ -27,11 +27,11 @@ books_sidebar:
   children:
     - title: "Desinging Data-Intensive Applications"
       url: /books/ddia
-- title: "Self Help"
-  children:
-    - title: "Why Has Nobody Told Me This Before?"
-      url: /books/whntmtb/
 - title: "Science"
   children:
     - title: "Why We Sleep?"
       url: /books/whywesleep/
+- title: "Self Help"
+  children:
+    - title: "Why Has Nobody Told Me This Before?"
+      url: /books/whntmtb/

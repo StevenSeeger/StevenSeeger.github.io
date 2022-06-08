@@ -2,8 +2,6 @@
 title: "Why We Sleep?"
 permalink: /books/whywesleep/
 topic: Science
-toc: true
-hidden: true
 ---
 
 "Why We Sleep?" was a very interesting read on... why we sleep if that wasn't apparent by the title. Just want to preface this review, I did additional research on the book before, during and after I read it on the claims and research portrayed in the book. It seems like some people feel like some claims might be false and/or research might have been misrepresented. I am by no means a professional at all in sleep (even if I have been doing it since before I was born). I read this book with a large grain of salt, but found many things to be enlightening, even they might not have been the purest of pure in regards of how some ideas were portrayed.
