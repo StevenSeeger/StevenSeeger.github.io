@@ -362,8 +362,12 @@ with DAG(
 
 That code then creates the following chart within airflow:
 
-![really cool dag chart](/assets/projects/board_game_montioring.png)
+![really cool dag chart]()
 
 To ensure that the data pipeline steps not only ran correctly, but were also processing good data, I made a dashboard to visualize various metadata about the different databases.
+
+![really cool dag chart](/assets/projects/board_game_montioring.png)
+
+It can be hard to digest, but the charts describe how many new board games were added, the number of board games with duplicate ranks (which should hopefully be none), the amount of missing description data, etc. This allows me to have a place where I can quickly check how raw data processing is running, and whether the output can be trusted or not. This chart could be further built out to analyze the other meta data concerning the other board game information, such as the category the board game is in, etc.
 
 To answer my question from the beginning of "which board do I need next?", the simple answer is "I really don't need any more board games".
