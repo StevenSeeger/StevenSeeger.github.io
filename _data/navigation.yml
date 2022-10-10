@@ -19,7 +19,7 @@ ddia_sidebar:
       - title: "3. Storage and Retrieval"
         url: /books/ddia/chapter_3/
       - title: "4. Encoding and Evolution"
-        url: /
+        url: /books/ddia/chapter_4/
 
 # Books Sidebar
 books_sidebar:
@@ -35,3 +35,6 @@ books_sidebar:
   children:
     - title: "Why Has Nobody Told Me This Before?"
       url: /books/whntmtb/
+
+projects_sidebar:
+- title: "Board Game Recommender"

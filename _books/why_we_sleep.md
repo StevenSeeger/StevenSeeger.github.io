@@ -13,6 +13,6 @@ A lot of people drink caffine throughout the day to help them regain energy, get
 A lack of sleep also negatively affects our overall health. As mentioned above, we don't retain information as easily. We also become hungerier and eat more, blood pressure spikes, the body is not able to easily digest glucose in the body, among other things.
 
 
-Start Date: 
+Start Date: 2022-05-20
 
-End Date: ???
+End Date: 2022-06-12
