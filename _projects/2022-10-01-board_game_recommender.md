@@ -362,7 +362,7 @@ with DAG(
 
 That code then creates the following chart within airflow:
 
-![really cool dag chart](../assets/projects/board_game_montioring.png)
+![really cool dag chart](/assets/projects/board_game_montioring.png)
 
 To ensure that the data pipeline steps not only ran correctly, but were also processing good data, I made a dashboard to visualize various metadata about the different databases.
 
