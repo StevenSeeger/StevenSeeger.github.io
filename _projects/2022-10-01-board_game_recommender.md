@@ -383,6 +383,14 @@ To ensure that the data pipeline steps not only ran correctly, but were also pro
 
 It can be hard to digest, but the charts describe how many new board games were added, the number of board games with duplicate ranks (which should hopefully be none), the amount of missing description data, etc. This allows me to have a place where I can quickly check how raw data processing is running, and whether the output can be trusted or not. This chart could be further built out to analyze the other meta data concerning the other board game information, such as the category the board game is in, etc.
 
+## Machine Learning Model
+
+### NLP Preprocessing
+
+### SVD Creation and Similarity Matrix
+
+### Custom Graph
+
 ## Conclusion
 
 I learned a lot while working on this project. How to set up airflow, how to manage a code base and abstraction, building and maintaining data pipelines, as well as deploying a machine learning pipeline. I can not only get the most similar board games from a SVD abstraction of board games, but I can also visualize how close they are in a web. This updates over time as long as the airflow deployment keeps running, and I can easily check in and see how the data looks, without ever needing to do a deep dive in with SQL.
