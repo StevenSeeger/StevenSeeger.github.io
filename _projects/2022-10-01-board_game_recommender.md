@@ -1,11 +1,18 @@
 ---
 title: "Recommendation System and Similarity Web for Board Games"
 permalink: /projects/bg_recommender/
+toc: true
 ---
+
+## Intro To Project
 
 I am a board game fanantic. Meaning, I really like to buy board games, I like to open the box it comes in, peel off the plastic shrink wrap, get somebody else to punch out all of the pieces (I really don't like that part of a new board game), looking at all the pieces, reading the rules, and then putting it on my shelf to collect dust and to never be played. This really doesn't have a lot to do with the project, besides that I spend a lot of time and money collecting games that I will never play. But the question becomes "Which board game do I need next?"
 
 To answer this question, I frequent a couple of board game websites and forums looking at games that are similar to the ones I own, and trying to get people to give me personal recommendations. But I realized that I end up not agreeing with their subjective opinions, or that there were other games that I enjoyed that didn't gain enough popularity and traction to ever warrant a recommendation. What I needed was an source of truth to allow me to find board games that were objectively similar to the ones I owned and liked.
+
+## Collecting Data
+
+### Web Scraping
 
 So to start, I needed to start collecting data. Easy enough, just build a web-scraper to scrape the data I needed. Start of simple, and run into issues later. I went onto `https://boardgamegeek.com/` and tried to see if they had an API that I could send get requests to. They did! Unforutnately, it was for single board games, or the hot 100 list. I wanted the top 100 board games. So I had to write up a custom scraper after getting the page source.
 
@@ -60,6 +67,8 @@ def get_top_games() -> List:
 ```
 
 The `_get_data` function has the best function name I have ever thought of that clearly describes what I am doing (this is sarcasm if you couldn't tell). But it effectively goes and fetches the raw html for the top 100 games. The `get_top_games` function takes the reponse, parses it apart into three key pieces: the overall rank, the board game geek id, and the name of the board game. Now this gets some of the data I need, and provides me a key piece of data that I can use to get any other data I might need, the `board game geek id`, or `id` in the code here.
+
+### Storing and Querying More Data
 
 Now that I started to have data, I needed a place to start storing the data. I spun up a sqlite database (which turned out to be a mistake that I would have to fix later), and started storing all the raw data as strings. The purpose behind ingesting the raw data as all strings into my database is that it allows me to prevent all implicit casting that might cause data issues later on, and allows me to handle the explicit casting of types from strings when needed to ensure the quality of my data. The schema looks this (please don't come after me for using the `TEXT` type. I know it can consume large amounts of memory):
 
@@ -221,6 +230,8 @@ CREATE TABLE IF NOT EXISTS raw_board_game_info (
 
 Now thats the data that is needed. I am going to skip over all the code for transfering the data from its raw tables, to all of the other tables. It should be largely straightforward, and can be found in the github code base.
 
+## Data Pipeline
+
 The next issue is, getting the data on a consistent basis. Instead of requesting the website all the time and scraping all the board games at each second of the day, I opted to try a tool called `Airflow`. Airflow is a batch data pipeline. I followed the `Airflow` website to set it up and deploy it on my home server. I set the pipeline to kick off every day, as I don't expect the data to be updated more regularly than that, but I also wasn't worried about loosing data that way. The code behind the airflow pipeline is:
 
 ```python
@@ -363,6 +374,8 @@ with DAG(
 That code then creates the following chart within airflow:
 
 ![really cool dag chart]()
+
+### Monitoring Data Pipeline
 
 To ensure that the data pipeline steps not only ran correctly, but were also processing good data, I made a dashboard to visualize various metadata about the different databases.
 
