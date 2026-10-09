@@ -39,13 +39,13 @@ const projects = (await getCollection('work'))
 							<Icon icon="fork-knife" size="1.33em" /> Home Cook
 						</Pill>
 						<Pill>
-							<Icon icon="book-open-text" size="1.33em" /> General Nerd
+							<Icon icon="book-open-text" size="1.33em" /> Nerd
 						</Pill>
 					</div>
 				</Hero>
 
 				<img
-					alt="Steven Seeger smiling in a red plaid shirt and tortoise shell glasses"
+					alt="Steven Seeger for a professional portrait"
 					width="480"
 					height="620"
 					src="/assets/portrait.jpg"
@@ -58,8 +58,8 @@ const projects = (await getCollection('work'))
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>Selected Posts</h3>
+					<p>Take a look below at some of my thoughts or projects over the years.</p>
 				</header>
 
 				<div class="gallery">
@@ -80,25 +80,6 @@ const projects = (await getCollection('work'))
 				</div>
 			</section>
 
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-							<li class="mention-card">
-								<p>{brand}</p>
-							</li>
-						))}
-					</Grid>
-				</div>
-			</section>
 		</main>
 
 		<ContactCTA />
