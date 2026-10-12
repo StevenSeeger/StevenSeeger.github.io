@@ -16,4 +16,16 @@ export const collections = {
 			github: z.string().optional(),
 		}),
 	}),
+	posts: defineCollection({
+		// Load Markdown files in the src/content/posts director
+		loader: glob({ base: "./src/content/posts", pattern: "**/*.md" }),
+		schema: z.object({
+			title: z.string(),
+			description: z.string(),
+			publishDate: z.coerce.date(),
+			tags: z.array(z.string()),
+			img: z.string(),
+			img_alt: z.string().optional(),
+		}),
+	}),
 };

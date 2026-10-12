@@ -7,10 +7,12 @@ npm = "10"
 biome = "latest"
 
 [tasks]
+astro_sync = "npx astro sync"
 build = "npm run build"
 test = "npm test"
 dev = "npm run dev"
 
+# Biome Tasks (ie formatting linting, assist, etc.)
 [tasks.check]
 description = "Run the biome formatter, linter and assist action in single pass, applying all fixes (including unsafe)"
 run = "biome check --write --unsafe"
