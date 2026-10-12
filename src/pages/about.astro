@@ -1,0 +1,108 @@
+---
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="About | Steven Seeger"
+	description="About Steven Seeger Lorem Ipsum"
+>
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="480"
+					height="620"
+					src="/assets/mochi.jpg"
+					alt="Mochi (my dog) being a goober"
+					style="margin: 0 auto"
+				>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						My day job is as a Software Engineer, with a heavy focus on AI and
+						data pipelines. My day to day includes utilizing cloud tooling,
+						orchestration tools, and in depth development work. Outside of that,
+						I love to cook and read textbooks. And give out unsolicited opinions
+						about restaurants, movies, and recipes. I enjoy climbing, but I am
+						not that good at it. Doesn't help that I am scared of heights.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Dakota State University - Master of Computer Science</p>
+					<p>Brigham Young University - Bachelor of Statistical Science</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+.about {
+	display: flex;
+	flex-direction: column;
+	gap: 3.5rem;
+}
+
+img {
+	margin-top: 1.5rem;
+	border-radius: 1.5rem;
+	box-shadow: var(--shadow-md);
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	color: var(--gray-200);
+}
+
+.section-title {
+	grid-column-start: 1;
+	font-size: var(--text-xl);
+	color: var(--gray-0);
+}
+
+.content {
+	grid-column: 2 / 4;
+}
+
+.content :global(a) {
+	text-decoration: 1px solid underline transparent;
+	text-underline-offset: 0.25em;
+	transition: text-decoration-color var(--theme-transition);
+}
+
+.content :global(a:hover),
+.content :global(a:focus) {
+	text-decoration-color: currentColor;
+}
+
+@media (min-width: 50em) {
+	.about {
+		display: grid;
+		grid-template-columns: 1fr 60% 1fr;
+	}
+
+	.about > :global(:first-child) {
+		grid-column-start: 2;
+	}
+
+	section {
+		display: contents;
+		font-size: var(--text-lg);
+	}
+}
+</style>
