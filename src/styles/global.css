@@ -29,7 +29,11 @@
 	--gradient-stop-1: var(--accent-light);
 	--gradient-stop-2: var(--accent-regular);
 	--gradient-stop-3: var(--accent-dark);
-	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
+	--gradient-subtle: linear-gradient(
+		150deg,
+		var(--gray-900) 19%,
+		var(--gray-999) 150%
+	);
 	--gradient-accent: linear-gradient(
 		150deg,
 		var(--gradient-stop-1),
@@ -68,8 +72,8 @@
 
 	/* Fonts */
 	--font-system:
-		system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-		"Open Sans", "Helvetica Neue", sans-serif;
+		system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	--font-body: "Public Sans", var(--font-system);
 	--font-brand: Rubik, var(--font-system);
 
@@ -102,7 +106,11 @@
 	--link-color: var(--accent-dark);
 
 	--gradient-stop-1: #4c11c6;
-	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
+	--gradient-subtle: linear-gradient(
+		150deg,
+		var(--gray-900) 19%,
+		var(--gray-999) 81%
+	);
 	--gradient-accent-orange: linear-gradient(
 		150deg,
 		#ca7879,
@@ -115,11 +123,26 @@
 		0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
 		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
 	--shadow-md:
-		0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
+		0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(
+			255,
+			255,
+			255,
+			0.03
+		),
 		0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
 	--shadow-lg:
-		0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
-		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
+		0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(
+			255,
+			255,
+			255,
+			0.05
+		),
+		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(
+			255,
+			255,
+			255,
+			0.12
+		);
 }
 
 html,

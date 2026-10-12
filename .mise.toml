@@ -1,0 +1,15 @@
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
+
+[tools]
+node = "22"
+npm = "10"
+biome = "latest"
+
+[tasks]
+build = "npm run build"
+test = "npm test"
+dev = "npm run dev"
+
+[tasks.format]
+run = "biome format"

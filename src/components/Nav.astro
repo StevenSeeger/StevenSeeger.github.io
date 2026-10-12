@@ -1,29 +1,45 @@
 ---
-import Icon from './Icon.astro';
-import type { iconPaths } from './IconPaths';
-import ThemeToggle from './ThemeToggle.astro';
+import Icon from "./Icon.astro";
+import type { iconPaths } from "./IconPaths";
+import ThemeToggle from "./ThemeToggle.astro";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Projects', href: '/projects/' },
-	{ label: 'Blog', href: '/blog/' },
-	{ label: 'About', href: '/about/' },
+	{ label: "Home", href: "/" },
+	{ label: "Projects", href: "/projects/" },
+	{ label: "Blog", href: "/blog/" },
+	{ label: "About", href: "/about/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
-	{ label: 'GitHub', href: 'https://github.com/StevenSeeger', icon: 'github-logo' },
-	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/steven-seeger-340893158/', icon: 'linkedin-logo' },
-	{ label: 'Instagram', href: 'https://www.instagram.com/littlesaltya/', icon: 'instagram-logo'}
+const iconLinks: {
+	label: string;
+	href: string;
+	icon: keyof typeof iconPaths;
+}[] = [
+	{
+		label: "GitHub",
+		href: "https://github.com/StevenSeeger",
+		icon: "github-logo",
+	},
+	{
+		label: "LinkedIn",
+		href: "https://www.linkedin.com/in/steven-seeger-340893158/",
+		icon: "linkedin-logo",
+	},
+	{
+		label: "Instagram",
+		href: "https://www.instagram.com/littlesaltya/",
+		icon: "instagram-logo",
+	},
 ];
 
 /** Test if a link is pointing to the current page. */
 const isCurrentPage = (href: string) => {
-	let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-	if (pathname.at(0) !== '/') pathname = '/' + pathname;
-	if (pathname.at(-1) !== '/') pathname += '/';
-	return pathname === href || (href !== '/' && pathname.startsWith(href));
+	let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+	if (pathname.at(0) !== "/") pathname = "/" + pathname;
+	if (pathname.at(-1) !== "/") pathname += "/";
+	return pathname === href || (href !== "/" && pathname.startsWith(href));
 };
 ---
 
