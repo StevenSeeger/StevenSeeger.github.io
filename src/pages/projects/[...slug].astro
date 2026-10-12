@@ -42,10 +42,13 @@ const { Content } = await render(entry);
 							</div>
 							<p class="description">{entry.data.description}</p>
 							{entry.data.github && (
-								<a href={entry.data.github}>
-									<span class="sr-only">entry.data.github</span>
-									<Icon icon="github-logo" />
-								</a>
+								<div class="link-container">
+									<p class="project-link">Project Code:</p>
+									<a href={entry.data.github}>
+										<span class="sr-only">entry.data.github</span>
+										<Icon icon="code" />
+									</a>
+								</div>
 							)}
 						</div>
 					</Hero>
@@ -93,6 +96,17 @@ header {
 .description {
 	font-size: var(--text-lg);
 	max-width: 54ch;
+}
+
+.project-link {
+	font-size: var(--text-lg);
+	white-space: nowrap;
+}
+
+.link-container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .content {
