@@ -5,6 +5,12 @@
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
+	"html": {
+		"experimentalFullSupportEnabled": true,
+		"formatter": {
+			"enabled": true
+		}
+	},
 	"files": {
 		"ignoreUnknown": false
 	},
