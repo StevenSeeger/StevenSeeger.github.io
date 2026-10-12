@@ -12,5 +12,5 @@ test = "npm test"
 dev = "npm run dev"
 
 [tasks.write]
-description = "Run the biome formatter, linter and assist action in single pass, applying safe fixes"
-run = "biome check --write"
+description = "Run the biome formatter, linter and assist action in single pass, applying all fixes (including unsafe)"
+run = "biome check --write --unsafe"
