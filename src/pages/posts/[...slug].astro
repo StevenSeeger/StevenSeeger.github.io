@@ -5,6 +5,7 @@ import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 import Pill from "../../components/Pill.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import RecipeCard from "@components/RecipeCard.astro";
 
 interface Props {
 	entry: CollectionEntry<"posts">;
@@ -49,6 +50,7 @@ const { Content } = await render(entry);
 					{entry.data.img && (
 						<img src={entry.data.img} alt={entry.data.img_alt || ""} />
 					)}
+					<RecipeCard recipe={entry}/>
 					<div class="content">
 						<Content />
 					</div>

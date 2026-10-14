@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    recipe: CollectionEntry<'posts'>
+}
+
+const { recipe: { data: { ingredients, instructions } } } = Astro.props;
+---
+
+<div class="recipe_card">
+    <div class="ingredients">
+        <ul>
+        {ingredients.map((ingredient) => (
+            <li>{ingredient}</li>
+        ))}
+        </ul>
+    </div>
+    <div class="instructions">
+        <ol>
+            {instructions.map((instruction) => (
+                <li>{instruction}</li>
+            ))}
+        </ol>
+    </div>
+</div>
+
+<style>
+    .recipe_card {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .ingredients {
+        flex: 1;
+    }
+
+    .instructions {
+        flex: 2;
+    }
+</style>

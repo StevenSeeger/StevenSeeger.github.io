@@ -26,6 +26,9 @@ export const collections = {
 			tags: z.array(z.string()),
 			img: z.string(),
 			img_alt: z.string().optional(),
+			// TODO: Move recipe as a specific Collection. These shouldnt be optional
+			ingredients: z.array(z.string()),
+			instructions: z.array(z.string()),
 		}),
 	}),
 };
